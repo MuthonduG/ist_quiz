@@ -1,0 +1,1 @@
+{"students": [{"id": 1, "student_name": "Max", "student_id": 670777.0, "courses": {"MTH2010A": 78, "MTH110D": 78, "APT1020": 86, "IST1040": 95}, "graded_courses": {"MTH2010A": "B-", "MTH110D": "B-", "APT1020": "B+", "IST1040": "A"}}]}
