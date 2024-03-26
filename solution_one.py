@@ -1,5 +1,7 @@
 # import json
 import json
+import matplotlib.pyplot as plt
+
 json_file_path = "student.json"
 
 try:
@@ -77,6 +79,47 @@ def student_data():
                 print("Student Id must be a number!!!")
                 break
 
-student_data()
-           
+def report_card():
+    student_name = input("Enter student's name: \n")
+    found = False
+    
+    for student in data["students"]:
+        if student["student_name"].lower() == student_name.lower():
+            print("Student Name:", student["student_name"])
+            print("Student ID:", student["student_id"])
+            print("Courses:")
+            course_labels = []
+            grades = []
+            for course, grade in student["courses"].items():
+                print(f"{course}: {grade} ({student['graded_courses'][course]})")
+                course_labels.append(course)
+                grades.append(grade)
+            found = True
+            break
+    
+    if not found:
+        print("Student not found!")
+        return
+    
+    # Plotting the grades using a bar chart
+    plt.figure(figsize=(10, 6))
+    plt.bar(course_labels, grades, color='skyblue')
+    plt.xlabel('Courses')
+    plt.ylabel('Grades')
+    plt.title(f'Grades for {student_name}')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+def decision_block():
+    decision = input("Do you want Report card (R) or Add Student Data (S)?\n")
+
+    if decision.lower() == 's':
+        student_data()
+    elif decision.lower() == 'r':
+        report_card()
+    else:
+        print("Your decision must be either (R) for Report Card or (S) for Adding a student")
+
+decision_block()     
 
