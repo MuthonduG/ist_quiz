@@ -1,10 +1,1 @@
-{"students": [
-    {
-    "id": 1, 
-    "student_name": "fgh", 
-    "student_id": 9090.0, 
-    "courses": {"maths": 78, "eng": 45, "kis": 20, "phy": 80, "chem": 68}, 
-    "graded_courses": {"maths": "B-", "eng": "F", "kis": "F", "phy": "B", "chem": "C-"}
-    }
-    ]
-}
+{"students": [{"id": 1, "student_name": "fgh", "student_id": 9090.0, "courses": {"maths": 78, "eng": 45, "kis": 20, "phy": 80, "chem": 68}, "graded_courses": {"maths": "B-", "eng": "F", "kis": "F", "phy": "B", "chem": "C-"}}, {"id": 2, "student_name": "Esther", "student_id": 670776.0, "courses": {"MTH1109": 80, "ENG1106": 80, "GRM2000": 80, "APT1040": 80, "IST1025": 70}, "graded_courses": {"MTH1109": "B", "ENG1106": "B", "GRM2000": "B", "APT1040": "B", "IST1025": "C"}}, {"id": 3, "student_name": "Ngash 101", "student_id": 2020202.0, "courses": {"MTH1109": 80, "MTH1110": 90, "MTH1025": 90, "IST1010": 100, "APT1025": 70}, "graded_courses": {"MTH1109": "B", "MTH1110": "A", "MTH1025": "A", "IST1010": "A", "APT1025": "C"}}, {"id": 4, "student_name": "Max", "student_id": 1919191.0, "courses": {"MTH10101": 90, "hsjs010": 70, "yedbdve": 80, "ywgsgsg": 29, "hsyhwh": 50}, "graded_courses": {"MTH10101": "A", "hsjs010": "C", "yedbdve": "B", "ywgsgsg": "F", "hsyhwh": "F"}}, {"id": 5, "student_name": "new", "student_id": 191919.0, "courses": {"hsyhwh": 80, "90": 90, "9iiiug": 90, "thfe45": 78, "hdrr": 100}, "graded_courses": {"hsyhwh": "B", "90": "A", "9iiiug": "A", "thfe45": "B-", "hdrr": "A"}}]}

@@ -39,45 +39,50 @@ def grading_system(grades):
 
 
 def student_data():
+    try:
+        num_students = int(input("How many students do you want to add: \n"))
 
-    while True:
-        student_name = input("Enter student name: \n")
+        for i in range(num_students):
+            while True:
+                student_name = input("Enter student name: \n")
 
-        if student_name == "":
-            print("Student name cannot be empty!!!")
-            continue  
-        else:
-            try:
-                student_id = float(input("Enter student id: "))
-                if student_id == "":
-                    print("Student ID cannot be empty!!!")
-                    break
+                if student_name == "":
+                    print("Student name cannot be empty!!!")
+                    continue  
                 else:
-                    courses = {}
-                    graded_courses = {}
-                    for i in range(5):
-                        course = input("Enter course code: \n")
-                        grade = int(input("Enter course grade: \n"))
+                    try:
+                        student_id = float(input("Enter student id: "))
+                        if student_id == "":
+                            print("Student ID cannot be empty!!!")
+                            break
+                        else:
+                            courses = {}
+                            graded_courses = {}
+                            for i in range(5):
+                                course = input("Enter course code: \n")
+                                grade = int(input("Enter course grade: \n"))
 
-                        courses[course] = grade
-                        graded_courses[course] = grading_system(grade)
-                    
-                    data["students"].append({
-                        "id": len(data["students"]) + 1,
-                        "student_name": student_name,
-                        "student_id": student_id,
-                        "courses": courses,
-                        "graded_courses": graded_courses
-                    })
+                                courses[course] = grade
+                                graded_courses[course] = grading_system(grade)
+                            
+                            data["students"].append({
+                                "id": len(data["students"]) + 1,
+                                "student_name": student_name,
+                                "student_id": student_id,
+                                "courses": courses,
+                                "graded_courses": graded_courses
+                            })
 
-                    with open(json_file_path, 'w') as file: 
-                        json.dump(data, file)
-                    
-                    break
-                
-            except ValueError:
-                print("Student Id must be a number!!!")
-                break
+                            with open(json_file_path, 'w') as file: 
+                                json.dump(data, file)
+                            
+                            break
+                        
+                    except ValueError:
+                        print("Student Id must be a number!!!")
+                        break
+    except ValueError:
+        print('Number of students must be an integer')
 
 def report_card():
     student_name = input("Enter student's name: \n")
@@ -112,7 +117,7 @@ def report_card():
     plt.show()
 
 def decision_block():
-    decision = input("Do you want Report card (R) or Add Student Data (S)?\n")
+    decision = input("Do you want a Report card (R) or Add Student Data (S)?\n")
 
     if decision.lower() == 's':
         student_data()
